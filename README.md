@@ -7,7 +7,8 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/preview.png" alt="ASCII Demo" width="800"/>
+<img width="999" height="445" alt="image" src="https://github.com/user-attachments/assets/bacfbb4c-b74d-4bb2-aa2a-5e0c9ec11214" />
+
   <br>
   <i>“From pixels to terminal vibes — built for hackers, artists, and anyone who loves that retro aesthetic.”</i>
 </p>
