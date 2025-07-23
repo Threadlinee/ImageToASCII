@@ -80,3 +80,7 @@ MIT License — Do whatever you want, just don’t sell it as your own. Credit w
 ⭐ Like this project?
 Show some love. Star the repo. Fork it. Share it.
 Let the world know that ASCII art is STILL ALIVE.
+```
+
+## ☕ Support Me
+If you like this project, feel free to [buy me a coffee](https://ko-fi.com/G2G114SBVV)!
