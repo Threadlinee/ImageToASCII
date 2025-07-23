@@ -36,7 +36,7 @@ All needed libraries are listed in the `requirements.txt`. Run:
 ```bash
 pip install -r requirements.txt
 2. 🧠 Launch the App
-python ascii_gui_converter.py
+python ascii_converter.py
 Then just click ⬆️ Upload Image ⬆️, pick your pic, and boom — ASCII magic.
 
 📄 requirements.txt
