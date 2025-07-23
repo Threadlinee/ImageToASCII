@@ -12,7 +12,7 @@ class IlphuStyleAsciiGUI:
         self.root.configure(bg='black')
         self.reset_mode = False
 
-        self.ascii_ramp = " .:-=+*#%@" 
+        self.ascii_ramp = " .:-=+*#%@"
         self.setup_ui()
         self.root.bind("<Control-c>", self.reset_or_exit)
 
@@ -20,10 +20,9 @@ class IlphuStyleAsciiGUI:
         self.main_frame = tk.Frame(self.root, bg='black')
         self.main_frame.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
-
         tk.Label(
             self.main_frame,
-            text="ASCII ART CONVERTER (Ilphu Style)",
+            text="Image to ASCII ART Converter",
             font=("Arial", 24, "bold"),
             fg="#00FF00",
             bg="black"
@@ -80,16 +79,27 @@ class IlphuStyleAsciiGUI:
             messagebox.showerror("Error", f"Failed to process image:\n{e}")
 
     def convert_to_ascii(self, img):
-        """Convert image to ASCII using brightness ramp, Ilphu style"""
+        """Convert image to ASCII using brightness ramp, Ilphu style with screen resolution scaling"""
         img = img.convert("L")
 
-        char_width = int(self.ascii_display.winfo_width() / 6)
-        char_height = int(self.ascii_display.winfo_height() / 12)
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+
+        char_pixel_width = 6
+        char_pixel_height = 12
+
+        max_chars_width = int(screen_width * 0.8 / char_pixel_width)
+        max_chars_height = int(screen_height * 0.8 / char_pixel_height)
 
         width, height = img.size
         aspect_ratio = height / width
-        new_width = char_width
+
+        new_width = max_chars_width
         new_height = int(aspect_ratio * new_width * 0.5)
+
+        if new_height > max_chars_height:
+            new_height = max_chars_height
+            new_width = int(new_height / (aspect_ratio * 0.5))
 
         img = img.resize((new_width, new_height), Image.LANCZOS)
         pixels = np.array(img)
